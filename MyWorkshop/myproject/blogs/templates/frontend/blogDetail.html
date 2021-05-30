@@ -1,0 +1,33 @@
+{%extends "frontend/layout.html" %}
+{% load humanize %}
+{% block content %}
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+    <div class="page-wrapper">
+        <div class="blog-title-area text-center">
+            <span class="color-orange"><a href="#" title="">{{blog.category}}</a></span>
+            <h3>{{blog.name}}</h3>
+
+            <div class="blog-meta big-meta">
+                <small><a href="#" title="">{{blog.created}}</a></small>
+                <small><a href="#" title="">by {{blog.writer}}</a></small>
+                <small><a href="#" title=""><i class="fa fa-eye"></i> {{blog.views | intcomma}}</a></small>
+            </div><!-- end meta -->
+
+            <div class="post-sharing">
+                <ul class="list-inline">
+                    <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                    <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+                    <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div><!-- end post-sharing -->
+        </div><!-- end title -->
+
+        <div class="single-post-media">
+            <img src="{{blog.image.url}}" alt="" class="img-fluid">
+        </div><!-- end media -->
+        <div class="blog-content">  
+            {{blog.content}}
+        </div><!-- end content -->
+    </div><!-- end page-wrapper -->
+</div><!-- end col -->
+{% endblock%}
